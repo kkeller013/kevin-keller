@@ -53,7 +53,7 @@ The absolute volume of recreational fishing activity by state.
 **What this shows:**  
 Where fishing participation is disproportionately high relative to population size.
 
-![Fishing Effort per Capita Map](maps/fishing_effort_per_capita_placeholder.png)
+![Fishing Effort per Capita Map](maps/fishing_effort_perperson.jpg)
 
 *Per-capita normalization highlights states where fishing represents a more prevalent recreational activity.*
 
