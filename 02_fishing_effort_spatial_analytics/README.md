@@ -1,16 +1,18 @@
 # Fishing Effort Spatial Analytics  
-**Participation, Access, and Pressure Across Eastern U.S. Coastal States**
+**Understanding Participation, Access, and Behavior Across U.S. Coastal States**
 
 ## Project Overview
-This project analyzes recreational fishing activity across Eastern U.S. coastal states mapping total fishing effort over a 15 year period, then breaking down that effort through spatial normalization methods. By examining fishing trips (effort) relative to population, coastline length, and fishing mode, the analysis demonstrates how different spatial lenses fundamentally change the interpretation of fishing participation and pressure.
+This project examines recreational fishing activity across U.S. coastal states to better understand the drivers of high fishing effort. Rather than treating fishing activity as a problem to be solved, the analysis takes a diagnostic approach—first mapping total fishing effort and then decomposing that effort through spatial normalization by population, shoreline availability, and fishing mode.
 
-**Key Insight:**  
-Observed fishing effort reflects a combination of participation intensity, physical access, and behavioral preference; normalizing by population and coastline reveals patterns that are obscured in raw totals.
+**Key Insight (BLUF):**  
+High fishing activity can arise from different underlying drivers. Viewing fishing effort through multiple spatial lenses reveals whether activity is driven primarily by participation intensity, physical access constraints, or behavioral preferences.
 
 ---
 
 ## Analytical Question
-Recreational fishing activity varies widely across coastal states, but total fishing effort alone does not explain why activity is high in some areas and lower in others. This analysis explores the structural drivers of fishing effort by examining how population size, shoreline availability, and fishing behavior contribute to observed spatial patterns.
+Recreational fishing effort varies widely across coastal states, but total fishing trips alone do not explain why activity is high in certain locations. This analysis asks:
+
+**What factors contribute to high recreational fishing activity, and how does interpretation change when fishing effort is examined relative to population size, shoreline availability, and fishing behavior?**
 
 ---
 
@@ -19,20 +21,19 @@ Recreational fishing activity varies widely across coastal states, but total fis
 ### Data
 - Recreational fishing trips by state and fishing mode
 - State population (year-matched)
-- Coastline length by state (proxy for shoreline access)
-- U.S. state boundaries for spatial mapping
+- Coastline length by state (proxy for shoreline availability)
+- U.S. state boundaries for spatial visualization
 
 ### Methods
-1. Aggregated fishing trips to the state level.
-2. Calculated total fishing effort as a baseline metric.
-3. Normalized fishing effort by population (trips per capita) to reflect participation intensity.
-4. Normalized fishing effort by coastline length (trips per km) to reflect access-constrained pressure.
-5. Calculated fishing mode shares (%) to provide behavioral context.
-6. Visualized spatial patterns using choropleth maps and supplemented results with a bivariate scatterplot.
+1. Aggregated fishing trips to the state level to establish total fishing effort.
+2. Normalized fishing effort by population (trips per capita) to represent participation intensity.
+3. Normalized fishing effort by coastline length (trips per kilometer) to represent access-constrained pressure.
+4. Calculated fishing mode shares (%) to provide behavioral context.
+5. Visualized spatial patterns using choropleth maps and explored relationships using a supplemental scatterplot.
 
 ### Tools
-- ArcGIS Pro (joins, normalization, mapping)
-- Spreadsheet analysis for QA and summary statistics
+- ArcGIS Pro (data joins, normalization, mapping)
+- Spreadsheet analysis for quality control and summary statistics
 
 ---
 
@@ -40,11 +41,11 @@ Recreational fishing activity varies widely across coastal states, but total fis
 
 ### 1. Total Fishing Effort (Observed Outcome)
 **What this shows:**  
-Where the largest absolute volumes of fishing activity occur.
+The absolute volume of recreational fishing activity by state.
 
-![Placeholder: Total Fishing Effort Map](maps/total_fishing_effort_placeholder.png)
+![Total Fishing Effort Map](maps/total_fishing_effort_placeholder.png)
 
-*Total fishing trips by state. High values reflect combined effects of population size, access, and fishing culture.*
+*Total fishing trips reflect a combined effect of population size, shoreline access, and fishing participation.*
 
 ---
 
@@ -52,47 +53,54 @@ Where the largest absolute volumes of fishing activity occur.
 **What this shows:**  
 Where fishing participation is disproportionately high relative to population size.
 
-![Placeholder: Fishing Effort per Capita Map](maps/fishing_effort_per_capita_placeholder.png)
+![Fishing Effort per Capita Map](maps/fishing_effort_per_capita_placeholder.png)
 
-*Trips per capita highlight states where fishing represents a stronger cultural or recreational activity.*
+*Per-capita normalization highlights states where fishing represents a more prevalent recreational activity.*
 
 ---
 
 ### 3. Fishing Effort per Kilometer of Coastline (Access-Constrained Pressure)
 **What this shows:**  
-Where fishing activity is concentrated along limited shoreline access.
+Where fishing activity is concentrated along limited shoreline availability.
 
-![Placeholder: Fishing Effort per Coastline Map](maps/fishing_effort_per_coastline_placeholder.png)
+![Fishing Effort per Coastline Map](maps/fishing_effort_per_coastline_placeholder.png)
 
-*Trips per km of coastline reveal states where physical access constraints may intensify fishing pressure.*
+*Coastline-normalized effort reveals spatial concentration of activity relative to physical access.*
 
 ---
 
 ### 4. Fishing Mode Context (Behavioral Structure)
 **What this shows:**  
-How fishing activity is distributed across shore, private boat, and charter modes.
+How recreational fishing activity is distributed across shore, private boat, and charter modes.
 
-![Placeholder: Fishing Mode Share Map](maps/fishing_mode_share_placeholder.png)
+![Fishing Mode Share Map](maps/fishing_mode_share_placeholder.png)
 
-*Fishing mode shares provide context for interpreting shoreline pressure and participation patterns.*
+*Fishing mode shares provide context for interpreting participation intensity and shoreline pressure.*
 
 ---
 
-### 5. Participation vs Access Interaction (Supplemental Analysis)
+### 5. Participation–Access Interaction (Supplemental Analysis)
 **What this shows:**  
 The relationship between reliance on shore fishing and access-constrained fishing pressure.
 
-![Placeholder: Scatterplot – % Shore Fishing vs Trips per km Coastline](outputs/scatter_shore_vs_coastline_placeholder.png)
+![Scatterplot: % Shore Fishing vs Trips per km Coastline](outputs/scatter_shore_vs_coastline_placeholder.png)
 
-*States with higher reliance on shore fishing often exhibit elevated fishing effort per kilometer of coastline, suggesting an interaction between access-dependent fishing modes and spatial concentration of effort.*
+*States with higher reliance on shore fishing often exhibit higher fishing effort per kilometer of coastline, suggesting an interaction between access-dependent fishing modes and spatial concentration of activity.*
 
 ---
 
 ## Interpretation
-- Total fishing effort reflects multiple structural drivers and can obscure localized pressure.
-- Per-capita normalization highlights participation intensity and fishing culture independent of population size.
-- Coastline-normalized effort captures access constraints and spatial concentration of activity.
-- Fishing mode share helps explain why similar effort levels can imply very different access and pressure dynamics across states.
+- Total fishing effort reflects multiple structural drivers and can obscure localized participation and access dynamics.
+- Per-capita normalization highlights participation intensity independent of population size.
+- Coastline-normalized effort captures how physical access constraints influence spatial concentration of fishing activity.
+- Fishing mode share helps explain why similar levels of total effort can imply very different access and pressure dynamics across states.
 
-Together, these perspectives demonstrate that fishi
+Together, these perspectives demonstrate that recreational fishing activity is shaped by participation, opportunity, and behavior rather than volume alone.
+
+---
+
+## Limitations & Next Steps
+- Coastline length is a proxy for access and does not account for public access points or infrastructure.
+- State-level aggregation masks local hotspots and within-state variability.
+- Future work could incorporate county-level analysis, access-point datasets, or temporal trends to further refine understanding of fishing pressure.
 
