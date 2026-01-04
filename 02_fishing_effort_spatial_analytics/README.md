@@ -43,7 +43,7 @@ Recreational fishing effort varies widely across coastal states, but total fishi
 **What this shows:**  
 The absolute volume of recreational fishing activity by state.
 
-![Total Fishing Effort Map](maps/total_fishing_effort_placeholder.png)
+![Total Fishing Effort Map](maps/Total_fishing_effort.png)
 
 *Total fishing trips reflect a combined effect of population size, shoreline access, and fishing participation.*
 
