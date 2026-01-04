@@ -1,56 +1,79 @@
-# 🍇 Precision Viticulture: Management Zone Mapping in the Calistoga AVA
+# Precision Viticulture: Management Zone Delineation  
+**Calistoga AVA, Napa Valley**
 
-## 🗺️ Management Zone Map (Overview)
-![Management Zones Map](maps/Calistoga_MZ_clip.jpg)
+## Project Overview
+This project applies multi-layer spatial analysis and unsupervised clustering to delineate vineyard management zones within the Calistoga AVA. By integrating vegetation, soil, and topographic variables, the analysis identifies spatially distinct production zones to support site-specific irrigation, canopy management, and drainage decisions.
 
-
-*A 4-zone K-means clustering map integrating NDVI, slope, clay %, and aspect.*
+**Key Outcome (BLUF):**  
+A four-zone management framework was developed that explains statistically significant differences in vine vigor and site conditions, enabling targeted vineyard interventions rather than uniform management.
 
 ---
 
-## 📌 Objective  
-Identify distinct vineyard management zones in the Calistoga American Viticultural Area (Napa Valley).
-Integrate NDVI, soil clay percentage, slope, and aspect into a unified spatial model.
-Provide actionable insights to improve irrigation efficiency, canopy management, and drainage planning.
+## Management Zone Map (Overview)
+![Management Zones Map](maps/Calistoga_MZ_clip.jpg)
 
-## 🧰 Tools  
-GIS / Remote Sensing: ArcGIS Pro · Landsat 8 OLI/TIRS · SRTM DEM
-Data Science: R (tidyverse, cluster, factoextra) · K-means clustering · ANOVA
-Precision Agriculture: Spatial variability analysis · Management zone delineation
+*A four-zone K-means clustering result integrating NDVI, slope, clay percentage, and aspect.*
 
-## 🧭 Workflow Summary  
-Created a 200m × 200m fishnet grid covering the vineyard region.
-Extracted per-cell values for NDVI, clay percentage, slope, and aspect.
-Scaled variables in R using scale().
-Used the Elbow Method to identify the optimal number of clusters (k = 4).
-Ran K-means clustering to delineate management zones.
-Performed ANOVA (p < 0.001) to validate NDVI differences between zones.
-Mapped and interpreted the final management zones in ArcGIS Pro.
+---
 
-## 📊 Key Results  
+## Problem Statement
+Vineyards within the Calistoga AVA exhibit substantial spatial variability in vigor, soil composition, and terrain. Managing these areas uniformly can lead to inefficient irrigation, inconsistent vine growth, and suboptimal fruit quality. This project asks:
 
+**How can spatially explicit data be used to delineate vineyard management zones that support precision viticulture decisions?**
+
+---
+
+## Approach
+
+### Data & Inputs
+- **Vegetation:** NDVI (Landsat 8 OLI/TIRS)
+- **Topography:** Slope and aspect (SRTM DEM)
+- **Soils:** Clay percentage
+- **Spatial Framework:** 200 m × 200 m fishnet grid
+
+### Methods
+1. Extracted NDVI, slope, aspect, and clay percentage values to a uniform grid.
+2. Standardized variables to ensure equal weighting in clustering.
+3. Determined the optimal number of clusters using the Elbow Method (k = 4).
+4. Applied K-means clustering to delineate management zones.
+5. Validated cluster separation using ANOVA (NDVI differences significant at p < 0.001).
+6. Mapped and interpreted management zones within ArcGIS Pro.
+
+### Tools
+- **GIS & Remote Sensing:** ArcGIS Pro, Landsat 8, SRTM DEM  
+- **Data Analysis:** R (tidyverse, cluster, factoextra)  
+- **Precision Ag Concepts:** Spatial variability analysis, management zone delineation
+
+---
+
+## Results
+
+### Spatial Patterns by Variable
 ![NDVI by Cluster](maps/CalistogaNDVI_clip.jpg)
-![ClayPct by Cluster](maps/CalistogaClayPct_Clip.jpg)
+![Clay % by Cluster](maps/CalistogaClayPct_Clip.jpg)
 ![Aspect by Cluster](maps/CalistogaAspect_clip.jpg)
 ![Slope by Cluster](maps/CalistogaSlope_Clip.jpg)
 
-Cluster 2 → Highest NDVI; vigorous vines → canopy management recommended
-Cluster 3 → Lowest NDVI; flat, clay-heavy soils → drainage improvements needed
-Cluster 1 → Steep slopes; moderate NDVI → erosion control + optimized irrigation
-Cluster 4 → Balanced slope and soil → stable conditions with moderate interventions
+### Cluster Summary
 
-| Cluster | NDVI  | Clay % | Slope (°) | Aspect | Interpretation                                          |
-| ------- | ----- | ------ | --------- | ------ | ------------------------------------------------------- |
-| **1**   | 0.287 | 14.3   | 16.3      | W-SW   | Steep slopes → focus on erosion + irrigation uniformity |
-| **2**   | 0.306 | 13.7   | 14.7      | N-NE   | Strong vigor → prioritize canopy management             |
-| **3**   | 0.224 | 20.8   | 3.56      | E-SE   | Low vigor due to clay + low slope → improve drainage    |
-| **4**   | 0.261 | 51.6   | 8.55      | N-NE   | Balanced conditions → moderate targeted inputs          |
-
-## 💡 Insights & Recommendations  
-
-Slope and aspect strongly influence vigor, with higher NDVI on well-exposed slopes.
-Clay-heavy areas show reduced vigor, indicating drainage limitations and root-zone stress.
-High-vigor areas require canopy control to manage vegetative growth and fruit quality.
-Management zones enable precision agriculture, reducing input waste and improving vineyard performance.
+| Cluster | NDVI  | Clay % | Slope (°) | Aspect | Management Interpretation |
+|------|------|--------|----------|--------|---------------------------|
+| **1** | 0.287 | 14.3 | 16.3 | W–SW | Steep slopes → erosion control and irrigation uniformity |
+| **2** | 0.306 | 13.7 | 14.7 | N–NE | High vigor → canopy management priority |
+| **3** | 0.224 | 20.8 | 3.56 | E–SE | Low vigor; clay-heavy → drainage improvement needed |
+| **4** | 0.261 | 51.6 | 8.55 | N–NE | Balanced conditions → moderate, targeted inputs |
 
 ---
+
+## Insights & Recommendations
+- Vine vigor varies systematically with slope, aspect, and soil texture rather than randomly across the landscape.
+- Clay-rich, low-slope areas consistently exhibit reduced NDVI, indicating potential drainage and root-zone constraints.
+- High-vigor zones benefit from canopy management to balance vegetative growth and fruit quality.
+- Management zones enable targeted interventions, reducing input waste while improving consistency and resilience.
+
+---
+
+## Limitations & Next Steps
+- Analysis is based on remotely sensed NDVI and does not incorporate yield or berry quality data.
+- Future work could integrate multi-year imagery to assess zone stability over time.
+- Incorporating in-field sensor data or yield maps would further strengthen zone validation.
