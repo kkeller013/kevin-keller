@@ -72,8 +72,7 @@ Vineyards within the Calistoga AVA exhibit substantial spatial variability in vi
 - Management zones enable targeted interventions, reducing input waste while improving consistency and resilience.
 
 ---
-
-## Limitations & Next Steps
-- Analysis is based on remotely sensed NDVI and does not incorporate yield or berry quality data.
-- Future work could integrate multi-year imagery to assess zone stability over time.
-- Incorporating in-field sensor data or yield maps would further strengthen zone validation.
+## Limitations & Future Work
+- The analysis relies on remotely sensed NDVI as a proxy for vine vigor and does not incorporate measured yield or fruit quality data.
+- Spatial resolution is constrained by satellite imagery; higher-resolution drone-based imagery could improve zone delineation accuracy.
+- Incorporating in-field soil measurements would strengthen validation of the soil texture layer and improve confidence in zone interpretation.
