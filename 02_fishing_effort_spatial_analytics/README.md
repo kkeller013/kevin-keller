@@ -63,16 +63,7 @@ Where fishing participation is disproportionately high relative to population si
 **What this shows:**  
 Where fishing activity is concentrated along limited shoreline availability.
 
-![Fishing Effort per Coastline Map](maps/fishing_effort_per_coastline_placeholder.png)
-
-*Coastline-normalized effort reveals spatial concentration of activity relative to physical access.*
-
 ---
-
-### 4. Fishing Mode Context (Behavioral Structure)
-**What this shows:**  
-How recreational fishing activity is distributed across shore, private boat, and charter modes.
-
 ![Fishing Mode Share Map](maps/fishing_mode_share_placeholder.png)
 
 *Fishing mode shares provide context for interpreting participation intensity and shoreline pressure.*
