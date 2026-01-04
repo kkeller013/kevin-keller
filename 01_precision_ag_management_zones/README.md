@@ -4,7 +4,7 @@
 ## Project Overview
 This project applies multi-layer spatial analysis and unsupervised clustering to delineate vineyard management zones within the Calistoga AVA. By integrating vegetation, soil, and topographic variables, the analysis identifies spatially distinct production zones to support site-specific irrigation, canopy management, and drainage decisions.
 
-**Key Outcome (BLUF):**  
+**Key Outcome:**  
 A four-zone management framework was developed that explains statistically significant differences in vine vigor and site conditions, enabling targeted vineyard interventions rather than uniform management.
 
 ---
